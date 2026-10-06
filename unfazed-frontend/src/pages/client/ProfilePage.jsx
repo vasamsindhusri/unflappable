@@ -69,10 +69,10 @@ export default function ProfilePage() {
             {therapist.languages.length > 0 && (
               <p className="mt-3 text-muted">Sessions in {therapist.languages.join(', ')}</p>
             )}
-            <button disabled title="Booking arrives in Module 2"
-              className="mt-7 cursor-not-allowed rounded-md bg-pine/60 px-6 py-3 font-medium text-white">
-              Book a session (coming soon)
-            </button>
+            <Link to={`/${therapist.slug}/book`}
+              className="mt-7 inline-block rounded-md bg-pine px-6 py-3 font-medium text-white hover:bg-pine-soft">
+              Book a session
+            </Link>
           </div>
         </section>
 

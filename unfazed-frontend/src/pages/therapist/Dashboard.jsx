@@ -60,6 +60,10 @@ export default function Dashboard() {
           <Link to={`/${therapist.slug}`} className="break-all font-medium text-pine underline">{publicUrl}</Link>
         </div>
 
+        <Link to="/dashboard/schedule" className="mt-4 inline-block rounded-md border border-pine px-4 py-2 text-sm font-medium text-pine hover:bg-mist">
+          Manage availability and bookings
+        </Link>
+
         <form onSubmit={onSubmit} className="mt-8 space-y-5">
           <FormField label="Name" name="name" value={form.name} onChange={onChange} required />
           <FormField label="Link name" name="slug" value={form.slug} onChange={onChange} hint="Letters, numbers and dashes. This becomes the end of your link." />

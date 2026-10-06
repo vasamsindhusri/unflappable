@@ -5,6 +5,8 @@ import ProfilePage from '../pages/client/ProfilePage.jsx';
 import Login from '../pages/auth/Login.jsx';
 import Register from '../pages/auth/Register.jsx';
 import Dashboard from '../pages/therapist/Dashboard.jsx';
+import Schedule from '../pages/therapist/Schedule.jsx';
+import BookingPage from '../pages/client/BookingPage.jsx';
 
 // Only logged-in therapists can open this
 function ProtectedRoute({ children }) {
@@ -20,6 +22,8 @@ export default function AppRoutes() {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+      <Route path="/dashboard/schedule" element={<ProtectedRoute><Schedule /></ProtectedRoute>} />
+      <Route path="/:slug/book" element={<BookingPage />} />
       {/* Must stay LAST: any other single word is treated as a therapist's link name */}
       <Route path="/:slug" element={<ProfilePage />} />
     </Routes>

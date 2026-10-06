@@ -3,6 +3,7 @@ const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
 const therapistRoutes = require('./routes/therapistRoutes');
 const shareRoutes = require('./routes/shareRoutes');
+const schedulingRoutes = require('./routes/schedulingRoutes');
 const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
@@ -15,6 +16,7 @@ app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
 
 app.use('/api/auth', authRoutes);
 app.use('/api/therapists', therapistRoutes);
+app.use('/api/scheduling', schedulingRoutes);
 app.use('/share', shareRoutes); // Open Graph page for link previews
 
 app.use((req, res) => res.status(404).json({ message: 'Route not found' }));
